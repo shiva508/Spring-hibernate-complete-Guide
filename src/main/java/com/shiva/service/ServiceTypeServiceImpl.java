@@ -19,9 +19,22 @@ public class ServiceTypeServiceImpl implements ServiceTypeService {
 		return serviceTypeRepository.saveService(serviceType);
 	}
 
-	@Transactional
+	@Transactional(readOnly=true)
 	public List<ServiceType> allServices() {
 		return serviceTypeRepository.allServices();
+	}
+
+	@Transactional
+	public ServiceType getServiceTypeById(Integer serviceId) {
+		return serviceTypeRepository.getServiceTypeById(serviceId);
+	}
+	@Transactional
+	public ServiceType getServiceTypeByServiceName(String serviceName) {
+		return serviceTypeRepository.getServiceTypeByServiceName(serviceName);
+	}
+	@Transactional(readOnly=false)
+	public ServiceType updateServiceType(ServiceType serviceType) {
+		return serviceTypeRepository.saveService(serviceType);
 	}
 
 }

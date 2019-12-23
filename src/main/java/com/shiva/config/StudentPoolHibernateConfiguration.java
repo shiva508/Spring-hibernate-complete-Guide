@@ -58,7 +58,8 @@ public class StudentPoolHibernateConfiguration {
 		hibernateProperties.put("hibernate.cache.region.factory_class", "ehcache");*/
 		/*hibernateProperties.put("hibernate.cache.region.factory_class", "org.hibernate.cache.ehcache.EhCacheRegionFactory");*/
 		hibernateProperties.put("hibernate.cache.region.factory_class", "org.hibernate.cache.ehcache.EhCacheRegionFactory");
-		hibernateProperties.put("hibernate.cache.use_second_level_cache","true");
+		hibernateProperties.put("hibernate.cache.use_second_level_cache",Boolean.TRUE.toString());
+		hibernateProperties.put("hibernate.cache.use_query_cache", Boolean.TRUE.toString());
 		hibernateProperties.put("net.sf.ehcache.configurationResourceName", "ehcache.xml");
 		
 		//C3P0
