@@ -1,6 +1,7 @@
 package com.shiva.controller;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,5 +36,9 @@ public class ServiceTypeController {
 	@PutMapping(value="/updateServiceType",produces = { MediaType.APPLICATION_JSON_VALUE})
 	public ServiceType updateServiceType(@RequestBody ServiceType serviceType) {
 		return serviceTypeService.updateServiceType(serviceType);
+	}
+	public ServiceType deleteServiceType(@PathVariable("serviceId")Integer serviceId) {
+		serviceTypeService.deleteServiceType(serviceId);
+		return null;
 	}
 }

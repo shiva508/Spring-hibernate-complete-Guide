@@ -10,4 +10,5 @@ public interface ServiceTypeRepository {
 	public ServiceType getServiceTypeById(Integer serviceId);
 	public ServiceType getServiceTypeByServiceName(String serviceName);
 	public ServiceType updateServiceType(ServiceType serviceType);
+	public ServiceType deleteServiceType(Integer serviceId);
 }

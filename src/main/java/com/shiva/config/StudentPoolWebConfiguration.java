@@ -53,6 +53,9 @@ public class StudentPoolWebConfiguration extends WebMvcConfigurerAdapter{
 	}
 
 	private ApiInfo getApiInfo() {
-		return new ApiInfoBuilder().title("USER REGISTARION APP").description("DATA").version("1.0.0").build();
+		return new ApiInfoBuilder()
+				.title("USER REGISTARION APP")
+				.description("This application is intended to help all home hold users")
+				.version("1.0.0").contact("dasarishiva1@gmail.com").build();
 	}
 }

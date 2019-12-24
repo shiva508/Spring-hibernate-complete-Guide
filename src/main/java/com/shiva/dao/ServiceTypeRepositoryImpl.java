@@ -1,15 +1,11 @@
 package com.shiva.dao;
 
 import java.util.List;
-
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Root;
-
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Repository;
@@ -40,14 +36,23 @@ public class ServiceTypeRepositoryImpl implements ServiceTypeRepository {
 		query.setParameter("serviceId", serviceId);
 		return (ServiceType) query.getSingleResult();
 	}
-	@Cacheable(value = "ServiceType.serviceType", key = "#serviceType", unless = "#serviceType != null and #serviceType.toUpperCase().startsWith('TEST')")
+	/*@Cacheable(value = "ServiceType.serviceType", key = "#serviceType", unless = "#serviceType != null and #serviceType.toUpperCase().startsWith('TEST')")*/
 	public ServiceType getServiceTypeByServiceName(String serviceType) {
-		return null;
+		Session session = sessionFactory.getCurrentSession();
+		Criteria criteria=session.createCriteria(ServiceType.class);
+		criteria.add(Restrictions.eq("serviceType", serviceType));
+		criteria.setMaxResults(1);
+		return (ServiceType) criteria.uniqueResult();
 	}
 
 	public ServiceType updateServiceType(ServiceType serviceType) {
 		Session session = sessionFactory.getCurrentSession();
 		return (ServiceType) session.merge(serviceType);
+	}
+
+	public ServiceType deleteServiceType(Integer serviceId) {
+		
+		return null;
 	}
 
 }

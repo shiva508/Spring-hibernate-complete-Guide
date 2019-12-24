@@ -19,7 +19,7 @@ public class ServiceTypeServiceImpl implements ServiceTypeService {
 		return serviceTypeRepository.saveService(serviceType);
 	}
 
-	@Transactional(readOnly=true)
+	@Transactional(readOnly = true)
 	public List<ServiceType> allServices() {
 		return serviceTypeRepository.allServices();
 	}
@@ -28,13 +28,20 @@ public class ServiceTypeServiceImpl implements ServiceTypeService {
 	public ServiceType getServiceTypeById(Integer serviceId) {
 		return serviceTypeRepository.getServiceTypeById(serviceId);
 	}
+
 	@Transactional
 	public ServiceType getServiceTypeByServiceName(String serviceName) {
 		return serviceTypeRepository.getServiceTypeByServiceName(serviceName);
 	}
-	@Transactional(readOnly=false)
+
+	@Transactional(readOnly = false)
 	public ServiceType updateServiceType(ServiceType serviceType) {
 		return serviceTypeRepository.saveService(serviceType);
+	}
+
+	@Transactional
+	public ServiceType deleteServiceType(Integer serviceId) {
+		return serviceTypeRepository.deleteServiceType(serviceId);
 	}
 
 }
