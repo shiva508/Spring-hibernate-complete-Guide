@@ -1,30 +1,37 @@
 package com.shiva.service;
 
 import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.shiva.dao.AddressRepository;
 import com.shiva.model.address.Address;
 
 @Service
 public class AddressServiceImpl implements AddressService {
-
+	@Autowired
+	private AddressRepository addressRepository;
+	@Transactional
 	public Address createAddress(Address address) {
-		return null;
+		return addressRepository.createAddress(address);
 	}
-
+	@Transactional
 	public Address updateAddress(Address address) {
-		return null;
+		return addressRepository.updateAddress(address);
 	}
-
+	@Transactional
 	public Address deleteAddress(Integer addressId) {
-		return null;
+		return addressRepository.deleteAddress(addressId);
 	}
-
+	@Transactional
 	public List<Address> AllAddress() {
-		return null;
+		return addressRepository.AllAddress();
 	}
-
+	@Transactional
 	public Address AddressById(Integer addressId) {
-		return null;
+		return addressRepository.AddressById(addressId);
 	}
 
 }

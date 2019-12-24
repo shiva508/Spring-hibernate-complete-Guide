@@ -8,13 +8,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table
+@Table(name = "ADDRESS_TYPE")
 public class AddressType {
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="ADDRESS_TYPE_ID")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "ADDRESS_TYPE_ID")
 	private Integer addressTypeId;
-	@Column(name="ADDRESS_TYPE")
+	@Column(name = "ADDRESS_TYPE")
 	private String addressType;
 
 	public AddressType() {
