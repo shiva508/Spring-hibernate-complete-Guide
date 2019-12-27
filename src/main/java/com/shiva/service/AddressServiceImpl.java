@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.shiva.dao.AddressRepository;
-import com.shiva.model.address.Address;
+import com.shiva.model.Address;
 
 @Service
 public class AddressServiceImpl implements AddressService {

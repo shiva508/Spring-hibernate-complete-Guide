@@ -2,7 +2,7 @@ package com.shiva.service;
 
 import java.util.List;
 
-import com.shiva.model.address.Address;
+import com.shiva.model.Address;
 
 public interface AddressService {
 	public Address createAddress(Address address);

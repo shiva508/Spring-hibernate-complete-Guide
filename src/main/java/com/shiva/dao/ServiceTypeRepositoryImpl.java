@@ -22,7 +22,7 @@ public class ServiceTypeRepositoryImpl implements ServiceTypeRepository {
 		return (ServiceType) session.merge(serviceType);
 	}
 
-	@Cacheable(value = "ehcache")
+	//@Cacheable(value = "ehcache")
 	public List<ServiceType> allServices() {
 		Session session = sessionFactory.getCurrentSession();
 		Query query = session.createQuery("From ServiceType", ServiceType.class);

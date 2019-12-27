@@ -1,4 +1,4 @@
-package com.shiva.model.address;
+package com.shiva.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

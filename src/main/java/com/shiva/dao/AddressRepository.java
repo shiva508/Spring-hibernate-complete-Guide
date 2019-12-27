@@ -2,7 +2,7 @@ package com.shiva.dao;
 
 import java.util.List;
 
-import com.shiva.model.address.Address;
+import com.shiva.model.Address;
 
 public interface AddressRepository {
 	public Address createAddress(Address address);

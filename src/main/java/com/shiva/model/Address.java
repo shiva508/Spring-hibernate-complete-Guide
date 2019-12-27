@@ -1,32 +1,38 @@
-package com.shiva.model.address;
+package com.shiva.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="ADDRESS")
+@Table(name = "ADDRESS")
 public class Address {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="ADDRESS_ID")
+	@Column(name = "ADDRESS_ID")
 	private Integer addressId;
-	@Column(name="ADDRESS")
+	@Column(name = "ADDRESS")
 	private String address;
-	@Column(name="PINCODE")
+	@Column(name = "PINCODE")
 	private String pinCode;
-	@Column(name="CITY")
-	private String City;
-	@Column(name="LOCATION")
+	@Column(name = "CITY")
+	private String city;
+	@Column(name = "LOCATION")
 	private String location;
 	@OneToOne
-	@JoinColumn(name ="ADD_TYPE")
+	@JoinColumn(name = "ADD_TYPE")
 	private AddressType addressType;
+	@ManyToOne
+	@JoinColumn(name="TECHNICIAN_ID")
+	private Electrician electrician;
 
 	public Address() {
 
@@ -54,6 +60,38 @@ public class Address {
 
 	public void setAddressType(AddressType addressType) {
 		this.addressType = addressType;
+	}
+
+	public String getPinCode() {
+		return pinCode;
+	}
+
+	public void setPinCode(String pinCode) {
+		this.pinCode = pinCode;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	public Electrician getElectrician() {
+		return electrician;
+	}
+
+	public void setElectrician(Electrician electrician) {
+		this.electrician = electrician;
 	}
 
 	@Override

@@ -19,7 +19,7 @@ public class ServiceTypeServiceImpl implements ServiceTypeService {
 		return serviceTypeRepository.saveService(serviceType);
 	}
 
-	@Transactional(readOnly = true)
+	@Transactional
 	public List<ServiceType> allServices() {
 		return serviceTypeRepository.allServices();
 	}
@@ -34,7 +34,7 @@ public class ServiceTypeServiceImpl implements ServiceTypeService {
 		return serviceTypeRepository.getServiceTypeByServiceName(serviceName);
 	}
 
-	@Transactional(readOnly = false)
+	@Transactional
 	public ServiceType updateServiceType(ServiceType serviceType) {
 		return serviceTypeRepository.saveService(serviceType);
 	}

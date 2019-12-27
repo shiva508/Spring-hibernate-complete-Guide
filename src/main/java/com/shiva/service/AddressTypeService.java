@@ -2,7 +2,7 @@ package com.shiva.service;
 
 import java.util.List;
 
-import com.shiva.model.address.AddressType;
+import com.shiva.model.AddressType;
 
 public interface AddressTypeService {
 	public AddressType createAddressType(AddressType addressType);

@@ -9,7 +9,7 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.shiva.model.address.AddressType;
+import com.shiva.model.AddressType;
 
 @Repository
 public class AddressTypeRepositoryImpl implements AddressTypeRepository {

@@ -1,5 +1,6 @@
 package com.shiva.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,7 +12,9 @@ import javax.persistence.Table;
 public class ServiceType {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name="SERVICE_ID")
 	private Integer serviceId;
+	@Column(name="SERVICE_TYPE")
 	private String serviceType;
 
 	public ServiceType() {

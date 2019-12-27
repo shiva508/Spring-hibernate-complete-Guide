@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.shiva.model.address.AddressType;
+import com.shiva.model.AddressType;
 import com.shiva.service.AddressTypeService;
 
 @RestController
