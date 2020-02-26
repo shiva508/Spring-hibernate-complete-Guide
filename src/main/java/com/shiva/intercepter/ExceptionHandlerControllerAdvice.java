@@ -16,6 +16,7 @@ import com.shiva.exception.ServiceTypeNotFound;
 public class ExceptionHandlerControllerAdvice {
 	@ExceptionHandler(value=Exception.class)
 	public ResponseEntity<CustomException> productNotFoundException(HttpServletRequest request,Exception exe) {
+		request.getRequestURI();
 		CustomException res=new CustomException();
 		res.setStatus(HttpStatus.NOT_FOUND.value());
 		res.setMessage(exe.getMessage());

@@ -17,10 +17,11 @@
 		timeToIdleSeconds="600" 
 		timeToLiveSeconds="3600"
 		overflowToDisk="true" />
-<!--     <cache name="ServiceType.serviceType"
+	<!--  <cache name="ServiceType.serviceType"
            maxElementsInMemory="10000" 
            eternal="false" 
            timeToIdleSeconds="600"
            timeToLiveSeconds="3600" 
-           overflowToDisk="true"/> -->
+           overflowToDisk="true"/> 
+           -->
 </ehcache>
